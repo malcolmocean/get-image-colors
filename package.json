@@ -1,16 +1,18 @@
 {
-  "name": "get-image-colors",
-  "version": "1.8.1",
-  "description": "Extract colors from images. Supports GIF, JPG, PNG, and even SVG!",
+  "name": "image2hues",
+  "version": "1.0.0",
+  "description": "Extract hues from images. Supports GIF, JPG, PNG, and even SVG! Oh the hue-manatee!",
   "main": "index.js",
   "scripts": {
     "test": "mocha && standard && standard-markdown",
     "lint": "standard"
   },
-  "repository": "https://github.com/zeke/get-image-colors",
+  "repository": "https://github.com/malcolmocean/image2hues",
   "keywords": [
     "color",
     "palette",
+    "hue",
+    "hues",
     "svg",
     "gif",
     "png",
@@ -20,7 +22,7 @@
     "rgb",
     "rgba"
   ],
-  "author": "zeke",
+  "author": "malcolmocean",
   "license": "MIT",
   "devDependencies": {
     "mocha": "^2.3.3",

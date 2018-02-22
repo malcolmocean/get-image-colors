@@ -1,13 +1,15 @@
-# get-image-colors
+# image2hues
 
-Extract colors from images. Supports GIF, JPG, PNG, and even SVG!
+Extract hues from images. Supports GIF, JPG, PNG, and even SVG!
+
+Adapted from zeke's [get-image-colors](https://github.com/zeke/get-image-colors).
 
 ![example color palette](https://cldup.com/-uw9Ub6L6s.png)
 
 ## Installation
 
 ```sh
-npm install get-image-colors --save
+npm install image2hues --save
 ```
 
 This package is intended for use in node environments. It won't work in a browser because it has node-specific dependencies.
@@ -16,9 +18,9 @@ This package is intended for use in node environments. It won't work in a browse
 
 ```js
 const path = require('path')
-const getColors = require('get-image-colors')
+const getHues = require('image2hues')
 
-getColors(path.join(__dirname, 'double-rainbow.png')).then(colors => {
+getHues(path.join(__dirname, 'double-rainbow.png')).then(colors => {
   // `colors` is an array of color objects
 })
 ```
@@ -27,7 +29,7 @@ You can also use a buffer as an input source.
 ```js
 const fs = require('fs')
 const buffer = fs.readFileSync(path.join(__dirname, 'double-rainbow.gif'))
-const getColors = require('get-image-colors')
+const getColors = require('image2hues')
 
 getColors(buffer, 'image/gif').then(colors => {
   // `colors` is an array of color objects
@@ -55,7 +57,7 @@ getColors(filename, function (err, colors) {
 
 ## How it Works
 
-`get-image-colors` uses [get-pixels](http://npm.im/get-pixels) to create a pixel array, then extracts a color palette with [get-rgba-palette](http://npm.im/get-rgba-palette), which uses [quantize](http://npm.im/quantize) under the hood.
+`image2hues` uses [get-pixels](http://npm.im/get-pixels) to create a pixel array, then extracts a color palette with [get-rgba-palette](http://npm.im/get-rgba-palette), which uses [quantize](http://npm.im/quantize) under the hood.
 
 Colors are converted from [get-rgba-palette's flat array format](https://github.com/mattdesl/get-rgba-palette#palettepixels-count-quality-filter) into [chroma.js color instances](http://gka.github.io/chroma.js/).
 
